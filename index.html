@@ -19,6 +19,11 @@
     "name": "Afraa Restaurant",
     "servesCuisine": "Persian",
     "priceRange": "$20–40",
+    "image": "https://afraarestaurant.ca/wp-content/uploads/2026/04/Afraa_OG-Image_500x500-1-copy.webp",
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"12:00","closes":"21:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday","Sunday"],"opens":"12:00","closes":"22:00"}
+    ],
     "telephone": "+1-905-764-0000",
     "url": "https://afraarestaurant.ca",
     "address": {
@@ -49,7 +54,7 @@
       <a href="#menu">Menu</a>
       <a href="#reviews">Reviews</a>
       <a href="#visit">Visit</a>
-      <a class="btn btn-small" href="https://afraarestaurant.ca" target="_blank" rel="noopener">Order Online</a>
+      <a class="btn btn-small" href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">Order Online</a>
     </nav>
   </header>
 
@@ -60,19 +65,20 @@
         <h1>A true Iranian<br>dining experience</h1>
         <p class="lead">Freshly prepared dishes, premium ingredients and perfectly grilled Persian kebabs, served with warm hospitality and generous portions.</p>
         <div class="hero-cta">
-          <a class="btn" href="https://afraarestaurant.ca" target="_blank" rel="noopener">Order Online</a>
+          <a class="btn" href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">Order Online</a>
           <a class="btn btn-ghost" href="tel:+19057640000">Call (905) 764-0000</a>
         </div>
         <ul class="hero-facts">
           <li><strong>4.8 ★</strong><span>1,977 reviews</span></li>
           <li><strong>$20–40</strong><span>per person</span></li>
-          <li><strong>10 p.m.</strong><span>closing time</span></li>
+          <li><strong>12–10</strong><span>open Fri–Sun</span></li>
         </ul>
       </div>
+      <img class="hero-photo" src="images/home-3.webp" alt="Grilled Persian kebabs with saffron tomato and lemon" width="1025" height="897">
     </section>
 
     <section class="strip" aria-label="Ways to enjoy Afraa">
-      <span>Dine-in</span><i aria-hidden="true">✦</i><span>Takeout</span><i aria-hidden="true">✦</i><span>No-contact delivery</span><i aria-hidden="true">✦</i><span>Online ordering</span>
+      <span>Dine-in</span><i aria-hidden="true">✦</i><span>Takeout</span><i aria-hidden="true">✦</i><span>No-contact delivery</span><i aria-hidden="true">✦</i><span>Order on the app</span>
     </section>
 
     <section class="section" id="about">
@@ -82,8 +88,9 @@
           <h2>Authentic Persian food, made with care</h2>
         </div>
         <div class="prose">
+          <img class="about-photo" src="images/home-1.webp" alt="Mixed kebab platter at Afraa" loading="lazy" width="1025" height="897">
           <p>At Afraa Restaurant we bring you the flavours of Iran: juicy koobideh, tender lamb shank, slow-cooked traditional stews and rice with a golden tahdig, all prepared fresh with premium ingredients.</p>
-          <p>Known for generous portions, a warm atmosphere and exceptional hospitality, Afraa is one of the region's favourite destinations for Persian cuisine. Every table starts with soup, bread and cheese, and ends with free tea and cookies.</p>
+          <p>Inspired by age-old recipes and prepared with the finest ingredients, each dish tells a story of Persian heritage. Known for generous portions, a warm atmosphere and exceptional hospitality, Afraa is a favourite destination for Persian cuisine. Whether you're dining in, picking up or ordering delivery, every visit is a memorable meal.</p>
         </div>
       </div>
     </section>
@@ -92,7 +99,7 @@
       <div class="container">
         <p class="eyebrow">Menu highlights</p>
         <h2>Guest favourites</h2>
-        <p class="section-sub">A taste of what Afraa is known for. See the full menu and order on our <a href="https://afraarestaurant.ca" target="_blank" rel="noopener">official site</a>.</p>
+        <p class="section-sub">A taste of what Afraa is known for. See the full menu with prices and order on our <a href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">online ordering page</a>.</p>
 
         <div class="menu-grid">
           <article class="dish popular">
@@ -129,6 +136,15 @@
             <h3>Appetizer Sampler</h3>
             <p>A shareable selection to start your meal.</p>
           </article>
+        </div>
+
+        <div class="gallery">
+          <figure><img src="images/menu-5.webp" alt="Koobideh kebab platter with saffron rice" loading="lazy" width="405" height="662"><figcaption>Koobideh platter</figcaption></figure>
+          <figure><img src="images/menu-2.webp" alt="Grilled kebab platter with rice and tomato" loading="lazy" width="405" height="662"><figcaption>Grilled kebab platter</figcaption></figure>
+          <figure><img src="images/menu-3.webp" alt="Chicken with saffron and barberry rice" loading="lazy" width="405" height="662"><figcaption>Chicken &amp; barberry rice</figcaption></figure>
+          <figure><img src="images/menu-4.webp" alt="Persian eggplant stew with saffron rice" loading="lazy" width="405" height="662"><figcaption>Persian stew</figcaption></figure>
+          <figure><img src="images/menu-1.webp" alt="Grilled chicken kebab sandwich" loading="lazy" width="405" height="662"><figcaption>Kebab sandwich</figcaption></figure>
+          <figure><img src="images/menu-6.webp" alt="Bowl of soup with lemon" loading="lazy" width="405" height="662"><figcaption>Soup</figcaption></figure>
         </div>
 
         <div class="extras">
@@ -187,18 +203,30 @@
           </address>
           <dl class="info">
             <dt>Phone</dt><dd><a href="tel:+19057640000">(905) 764-0000</a></dd>
-            <dt>Hours</dt><dd>Open daily, closing at 10 p.m.<br><small>Please confirm opening hours when you call.</small></dd>
+            <dt>Hours</dt><dd>Mon – Thu: 12:00 PM – 9:00 PM<br>Fri – Sun: 12:00 PM – 10:00 PM</dd>
             <dt>Price</dt><dd>$20–40 per person</dd>
             <dt>Service</dt><dd>Dine-in · Takeout · No-contact delivery</dd>
           </dl>
           <div class="hero-cta">
             <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Afraa+Restaurant+180+Steeles+Ave+W+Unit+19+Vaughan+ON" target="_blank" rel="noopener">Get directions</a>
-            <a class="btn btn-ghost-light" href="https://afraarestaurant.ca" target="_blank" rel="noopener">Order online</a>
+            <a class="btn btn-ghost-light" href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">Order online</a>
           </div>
         </div>
         <div class="map">
           <iframe title="Map to Afraa Restaurant" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps?q=Afraa+Restaurant+180+Steeles+Ave+W+Unit+19+Vaughan+ON&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section app">
+      <div class="container center">
+        <p class="eyebrow">Order from your phone</p>
+        <h2>Download the Afraa app</h2>
+        <p class="section-sub" style="margin-inline:auto">Easy ordering for pickup and delivery.</p>
+        <div class="hero-cta" style="justify-content:center">
+          <a class="btn" href="https://apps.apple.com/ca/app/afraa/id6741532998" target="_blank" rel="noopener">App Store</a>
+          <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=ca.mealsy.onlineordering.android.afraa" target="_blank" rel="noopener">Google Play</a>
         </div>
       </div>
     </section>

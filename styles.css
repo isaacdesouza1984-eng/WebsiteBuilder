@@ -71,7 +71,8 @@ h3 { font-size: 1.5rem; }
   content: ""; position: absolute; inset: 0; opacity: .08;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 6l8 26 26 8-26 8-8 26-8-26-26-8 26-8z' fill='none' stroke='%23fff' stroke-width='1.5'/%3E%3C/svg%3E");
 }
-.hero-inner { position: relative; width: min(1120px, 100% - 2rem); margin-inline: auto; }
+.hero { gap: 2rem; }
+.hero-inner { position: relative; z-index: 1; width: min(1120px, 100% - 2rem); margin-inline: auto; }
 .hero .lead { max-width: 560px; margin: 1.4rem 0 2rem; font-size: 1.15rem; color: #f3e6d3; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; }
 .hero-facts { list-style: none; display: flex; flex-wrap: wrap; gap: 2.5rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.2); }
@@ -144,3 +145,26 @@ address { font-style: normal; font-size: 1.15rem; margin: 1rem 0 1.5rem; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* Photos */
+.hero-photo { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: min(46vw, 640px); height: auto; border-radius: 28px 0 0 28px; box-shadow: -20px 20px 60px rgba(0,0,0,.45); }
+.hero .lead { max-width: 480px; }
+.about-photo { width: 100%; height: auto; border-radius: var(--radius); margin-bottom: 1.4rem; box-shadow: 0 10px 30px rgba(42,26,20,.15); }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+.gallery figure { position: relative; border-radius: var(--radius); overflow: hidden; background: #000; }
+.gallery img { width: 100%; height: 100%; aspect-ratio: 405/662; object-fit: cover; transition: transform .4s; }
+.gallery figure:hover img { transform: scale(1.04); }
+.gallery figcaption { position: absolute; inset: auto 0 0 0; padding: 1.4rem .8rem .7rem; color: #fff; font-size: .85rem; font-weight: 600; background: linear-gradient(transparent, rgba(0,0,0,.75)); }
+.app { background: var(--bg-alt); }
+@media (max-width: 900px) {
+  .hero-photo { position: relative; transform: none; width: 100%; max-width: 520px; margin: 2rem auto 0; border-radius: var(--radius); }
+  .hero { flex-direction: column; justify-content: center; }
+}
+
+/* Layout fixes */
+.hero-photo { width: min(40vw, 540px); }
+.hero-inner { padding-right: min(42vw, 560px); }
+.dish.popular h3 { padding-top: 1.4rem; }
+.tag { top: .9rem; left: 1.5rem; right: auto; }
+.about-photo { aspect-ratio: 16/10; object-fit: cover; }
+@media (max-width: 900px) { .hero-inner { padding-right: 0; } }
