@@ -18,11 +18,11 @@ $$("[data-bind=remaining]").forEach(e => e.textContent = Math.max(CAMPAIGN.thres
 $$("[data-bind=ship]").forEach(e => e.textContent = CAMPAIGN.estShip);
 $$("[data-bind=ends]").forEach(e => e.textContent = new Date(CAMPAIGN.endsAt).toLocaleDateString("en-CA",
   { year: "numeric", month: "long", day: "numeric", timeZone: "America/Toronto" }));
-$$("[data-bind=ig]").forEach(a => { a.href = "https://instagram.com/" + CAMPAIGN.instagram; a.textContent = "@" + CAMPAIGN.instagram; });
+$$("[data-bind=ig]").forEach(a => { a.href = "https://instagram.com/" + CAMPAIGN.instagram; if (!a.hasAttribute("data-keep")) a.textContent = "@" + CAMPAIGN.instagram; });
 
 /* progress bar */
 const pct = Math.min(100, Math.round(CAMPAIGN.unitsReserved / CAMPAIGN.threshold * 100));
-requestAnimationFrame(() => $$(".bar>span").forEach(b => b.style.width = pct + "%"));
+requestAnimationFrame(() => $$(".bar-track>span").forEach(b => b.style.width = pct + "%"));
 $$("[data-bind=pct]").forEach(e => e.textContent = pct + "%");
 
 /* countdown */
