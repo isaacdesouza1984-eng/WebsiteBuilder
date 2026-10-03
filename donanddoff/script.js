@@ -5,7 +5,7 @@ const CAMPAIGN = {
   endsAt: "2026-10-24T23:59:00-04:00",   // fixed end date, Toronto time (EDT)
   estShip: "Estimated 5–6 weeks after the campaign closes",
   checkoutUrl: "",                       // Shopify product / checkout link, e.g. https://shop.example.com/products/flagship-tee
-  instagram: "donanddoff"                // confirm handle
+  instagram: "donanddoffco"
 };
 
 const $ = (s, r = document) => r.querySelector(s);
