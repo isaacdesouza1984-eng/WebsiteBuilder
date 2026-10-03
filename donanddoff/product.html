@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pressure-Line Tee — Pre-order · Don & Doff Co.</title>
+<meta name="description" content="Threshold pre-order. 50 units to start production. Full refund if the threshold is not met.">
+<meta name="theme-color" content="#1b1a17">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+  <a class="brand" href="index.html"><img src="crest.svg" alt=""><span>DON &amp; DOFF CO.</span></a>
+  <nav aria-label="Primary">
+    <a href="product.html" aria-current="page">Flagship</a>
+    <a href="about.html">The Name</a>
+    <a data-bind="ig" href="https://instagram.com/donanddoff" rel="noopener">Instagram</a>
+  </nav>
+</div></header>
+<main>
+
+<section style="padding-top:clamp(32px,5vw,64px)"><div class="wrap pdp">
+  <div class="gallery">
+    <div class="main"><img id="main-img" src="images/hoodie-seams.webp" alt="Garment with contrast seam lines across shoulders and torso"></div>
+    <div class="thumbs"><button type="button" data-src="images/hoodie-seams.webp" data-alt="Garment with contrast seam lines across shoulders and torso" aria-pressed="true" aria-label="View image 1"><img src="images/hoodie-seams.webp" alt=""></button><button type="button" data-src="images/hoodie-halo.webp" data-alt="Black hooded jacket with white contrast panels" aria-pressed="false" aria-label="View image 2"><img src="images/hoodie-halo.webp" alt=""></button><button type="button" data-src="images/hoodie-orbit.webp" data-alt="Black jacket with white chevron panels against a dark sky" aria-pressed="false" aria-label="View image 3"><img src="images/hoodie-orbit.webp" alt=""></button><button type="button" data-src="images/hoodie-visor.jpg" data-alt="Hooded jacket with visor and panelled seam lines" aria-pressed="false" aria-label="View image 4"><img src="images/hoodie-visor.jpg" alt=""></button><button type="button" data-src="images/suit.webp" data-alt="Pressure suit before a rocket and moon" aria-pressed="false" aria-label="View image 5"><img src="images/suit.webp" alt=""></button></div>
+    <p class="note">Concept imagery. Final print placement and colourway confirmed with the printer before production.</p>
+  </div>
+  <div>
+    <p class="mono">Flagship · Threshold pre-order</p>
+    <h1 style="margin:10px 0 10px">The Pressure-Line Tee</h1>
+    <p class="price">$99</p>
+    <p>Seam lines run through the shoulders and torso, as on a pressure suit. A tee that remembers the suit without pretending to be one.</p>
+<div class="gauge" aria-live="polite">
+  <div class="row"><span class="mono">Threshold</span><span class="mono"><b data-bind="reserved" style="color:var(--brass)"></b> of <span data-bind="threshold"></span> units reserved</span></div>
+  <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progress toward production threshold"><span></span></div>
+  <div class="count" data-countdown aria-label="Time remaining"><div><b>--</b><span>Days</span></div><div><b>--</b><span>Hrs</span></div><div><b>--</b><span>Min</span></div><div><b>--</b><span>Sec</span></div></div>
+  <p class="mono" style="margin-top:14px;text-align:center">Closes <span data-bind="ends"></span> · Production starts at <span data-bind="threshold"></span> units</p>
+  <p class="mono" data-closed hidden style="margin-top:10px;text-align:center;color:var(--brass)">Campaign closed.</p>
+</div>
+    <form id="reserve" novalidate>
+      <p class="mono">Size</p>
+      <div class="sizes" role="radiogroup" aria-label="Size">
+        <span><input type="radio" name="size" id="s-S" value="S"><label for="s-S">S</label></span><span><input type="radio" name="size" id="s-M" value="M"><label for="s-M">M</label></span><span><input type="radio" name="size" id="s-L" value="L"><label for="s-L">L</label></span><span><input type="radio" name="size" id="s-XL" value="XL"><label for="s-XL">XL</label></span><span><input type="radio" name="size" id="s-2XL" value="2XL"><label for="s-2XL">2XL</label></span>
+      </div>
+      <button class="btn" type="submit" style="width:100%">Reserve · $99</button>
+      <p class="status" role="status"></p>
+    </form>
+
+    <div class="terms">
+      <h3>Campaign terms</h3>
+      <dl>
+        <dt>Threshold</dt><dd><span data-bind="threshold"></span> units. Production starts only if met.</dd>
+        <dt>Deadline</dt><dd><span data-bind="ends"></span>. Fixed. Not extended.</dd>
+        <dt>Payment</dt><dd>Charged at order.</dd>
+        <dt>Refund</dt><dd>If the threshold is not met by the deadline, every order is refunded in full.</dd>
+        <dt>Shipping</dt><dd data-bind="ship"></dd>
+      </dl>
+    </div>
+
+    <ul class="spec">
+      <li>Premium blank, printed (DTG / DTF)</li>
+      <li>Contrast seam lines across shoulders and torso</li>
+      <li>Produced in Toronto</li>
+      <li>One production run. No restock promised.</li>
+    </ul>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">
+  <img src="crest.svg" alt="Don &amp; Doff Co. crest">
+  <p class="stamp" style="color:var(--brass);font-size:.8rem">Suit up. Reach orbit. Repeat.</p>
+  <div class="links"><a href="product.html">Flagship pre-order</a><a href="about.html">The name</a><a data-bind="ig" href="https://instagram.com/donanddoff" rel="noopener">Instagram</a></div>
+  <p class="fine">Pre-orders are charged at checkout and refunded in full if the unit threshold is not met by the campaign deadline.</p>
+  <p class="mono" style="margin-top:22px">&copy; Don &amp; Doff Co.</p>
+</div></footer>
+<script src="script.js"></script>
+</body>
+</html>
