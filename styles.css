@@ -168,3 +168,31 @@ address { font-style: normal; font-size: 1.15rem; margin: 1rem 0 1.5rem; }
 .tag { top: .9rem; left: 1.5rem; right: auto; }
 .about-photo { aspect-ratio: 16/10; object-fit: cover; }
 @media (max-width: 900px) { .hero-inner { padding-right: 0; } }
+
+/* Menu tabs + cards */
+.menu-tabs { display: flex; gap: .5rem; overflow-x: auto; padding-bottom: .6rem; margin-bottom: 1.4rem; scrollbar-width: thin; }
+.menu-tabs button { flex: none; font: inherit; font-weight: 600; font-size: .9rem; padding: .55rem 1.1rem; border-radius: 999px; border: 1.5px solid var(--pomegranate); background: transparent; color: var(--pomegranate); cursor: pointer; }
+.menu-tabs button[aria-selected="true"], .menu-tabs button:hover { background: var(--pomegranate); color: #fff; }
+.menu-grid { grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); }
+.dish { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.dish img { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: var(--bg-alt); }
+.dish-body { padding: 1.1rem 1.2rem 1.3rem; display: flex; flex-direction: column; flex: 1; }
+.dish-head { display: flex; justify-content: space-between; gap: .8rem; align-items: baseline; }
+.dish h3 { font-size: 1.35rem; margin: 0; }
+.price { font-weight: 600; color: var(--pomegranate); white-space: nowrap; }
+.dish .fa { margin-top: .2rem; }
+.dish p { margin-top: .5rem; }
+.menu-note { margin-top: 1.6rem; color: var(--muted); font-size: .9rem; }
+.dish-noimg .dish-body { border-top: 4px solid var(--saffron); }
+
+/* Contact form */
+.contact-form { display: grid; gap: 1rem; background: #fff; padding: 1.6rem; border-radius: var(--radius); box-shadow: 0 4px 20px rgba(42,26,20,.08); }
+.contact-form label { display: grid; gap: .35rem; font-size: .85rem; font-weight: 600; }
+.contact-form input, .contact-form textarea { font: inherit; padding: .75rem .9rem; border: 1.5px solid #d9cdbd; border-radius: 10px; background: var(--bg); color: var(--ink); }
+.contact-form input:focus, .contact-form textarea:focus { outline: 2px solid var(--saffron); border-color: var(--saffron); }
+.contact-form .btn { cursor: pointer; justify-self: start; }
+.contact-form .btn[disabled] { opacity: .6; cursor: wait; }
+.hp { position: absolute; left: -9999px; }
+.form-status { font-size: .9rem; min-height: 1.3em; }
+.form-status.ok { color: #1c6b3a; } .form-status.err { color: var(--pomegranate); }
+.gallery { display: none; }

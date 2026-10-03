@@ -53,6 +53,7 @@
       <a href="#about">Our Story</a>
       <a href="#menu">Menu</a>
       <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
       <a href="#visit">Visit</a>
       <a class="btn btn-small" href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">Order Online</a>
     </nav>
@@ -97,55 +98,15 @@
 
     <section class="section section-alt" id="menu">
       <div class="container">
-        <p class="eyebrow">Menu highlights</p>
-        <h2>Guest favourites</h2>
-        <p class="section-sub">A taste of what Afraa is known for. See the full menu with prices and order on our <a href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">online ordering page</a>.</p>
+        <p class="eyebrow">Menu</p>
+        <h2>Our menu</h2>
+        <p class="section-sub">Grilled kebabs, slow-cooked stews and traditional Persian favourites. Ready to order? <a href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">Order online</a>.</p>
 
-        <div class="menu-grid">
-          <article class="dish popular">
-            <span class="tag">Popular</span>
-            <h3>Soup <span class="fa" lang="fa" dir="rtl">سوپ شیر</span></h3>
-            <p>A comforting house soup, served as a welcome to the table.</p>
-          </article>
-          <article class="dish popular">
-            <span class="tag">Popular</span>
-            <h3>Kashke Bademjan <span class="fa" lang="fa" dir="rtl">کشک بادمجان</span></h3>
-            <p>Silky roasted eggplant with creamy kashk, a Persian classic.</p>
-          </article>
-          <article class="dish">
-            <h3>Kabob Torsh</h3>
-            <p>Tangy marinated kabob in the traditional northern Iranian style.</p>
-          </article>
-          <article class="dish">
-            <h3>Traditional Lamb Kale Pacha</h3>
-            <p>A slow-cooked traditional Persian specialty for the adventurous.</p>
-          </article>
-          <article class="dish">
-            <h3>Sabzi Polo Ba Mahi</h3>
-            <p>Herbed rice served with fish, a Persian New Year favourite.</p>
-          </article>
-          <article class="dish">
-            <h3>Lamb Shank</h3>
-            <p>Tender, slow-cooked lamb shank served with rice.</p>
-          </article>
-          <article class="dish">
-            <h3>Koobideh &amp; Grilled Kebabs</h3>
-            <p>Perfectly grilled over fire, juicy and full of flavour.</p>
-          </article>
-          <article class="dish">
-            <h3>Appetizer Sampler</h3>
-            <p>A shareable selection to start your meal.</p>
-          </article>
+        <div class="menu-tabs" role="tablist" aria-label="Menu categories" id="menu-tabs"></div>
+        <div class="menu-grid" id="menu-grid" role="tabpanel" aria-live="polite">
+          <noscript><p>Please enable JavaScript to browse the menu, or <a href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus">view it on our ordering page</a>.</p></noscript>
         </div>
-
-        <div class="gallery">
-          <figure><img src="images/menu-5.webp" alt="Koobideh kebab platter with saffron rice" loading="lazy" width="405" height="662"><figcaption>Koobideh platter</figcaption></figure>
-          <figure><img src="images/menu-2.webp" alt="Grilled kebab platter with rice and tomato" loading="lazy" width="405" height="662"><figcaption>Grilled kebab platter</figcaption></figure>
-          <figure><img src="images/menu-3.webp" alt="Chicken with saffron and barberry rice" loading="lazy" width="405" height="662"><figcaption>Chicken &amp; barberry rice</figcaption></figure>
-          <figure><img src="images/menu-4.webp" alt="Persian eggplant stew with saffron rice" loading="lazy" width="405" height="662"><figcaption>Persian stew</figcaption></figure>
-          <figure><img src="images/menu-1.webp" alt="Grilled chicken kebab sandwich" loading="lazy" width="405" height="662"><figcaption>Kebab sandwich</figcaption></figure>
-          <figure><img src="images/menu-6.webp" alt="Bowl of soup with lemon" loading="lazy" width="405" height="662"><figcaption>Soup</figcaption></figure>
-        </div>
+        <p class="menu-note">Prices in CAD, before tax. Half-salad &amp; half-rice options, breakfast, Kaleh Pacheh and more are on our <a href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">online ordering page</a>.</p>
 
         <div class="extras">
           <h3>Included &amp; on the side</h3>
@@ -187,6 +148,25 @@
           </figure>
         </div>
         <p class="center"><a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Afraa+Restaurant+180+Steeles+Ave+W+Unit+19+Vaughan" target="_blank" rel="noopener">Read all reviews on Google</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow">Contact us</p>
+          <h2>Questions, feedback or an inquiry?</h2>
+          <p class="prose">Fill out the form and our team will get back to you promptly. For reservations or large groups, calling <a href="tel:+19057640000">(905) 764-0000</a> is quickest.</p>
+        </div>
+        <form class="contact-form" id="contact-form" data-endpoint="" novalidate>
+          <label>Name<input name="name" type="text" autocomplete="name" required></label>
+          <label>Email<input name="email" type="email" autocomplete="email" required></label>
+          <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+          <label>Message<textarea name="message" rows="5" required></textarea></label>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+          <button class="btn" type="submit">Send message</button>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
       </div>
     </section>
 
@@ -237,6 +217,7 @@
     <p class="muted">© <span id="year">2026</span> Afraa Restaurant. All rights reserved.</p>
   </footer>
 
+  <script src="menu-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
