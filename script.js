@@ -1,25 +1,15 @@
 (function () {
-  var toggle = document.querySelector('.nav-toggle');
+  var toggle = document.querySelector('.af-burger');
   var nav = document.getElementById('nav');
 
   function setOpen(open) {
     nav.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', String(open));
   }
-
-  toggle.addEventListener('click', function () {
-    setOpen(!nav.classList.contains('open'));
-  });
-  nav.addEventListener('click', function (e) {
-    if (e.target.tagName === 'A') setOpen(false);
-  });
+  toggle.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
+  nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') setOpen(false); });
 
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  /* Menu */
-  var tabs = document.getElementById('menu-tabs');
-  var grid = document.getElementById('menu-grid');
-  var menu = window.MENU || [];
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -27,6 +17,20 @@
     if (text) n.textContent = text;
     return n;
   }
+
+  /* Scrolling dish strip */
+  var words = ['Koobideh', 'Barg', 'Lamb shank', 'Ghormeh sabzi', 'Saffron rice', 'Tahdig', 'Kashke bademjan', 'Shishlik'];
+  var strip = document.getElementById('strip');
+  words.concat(words).forEach(function (w) {
+    var s = el('span', '', w);
+    s.appendChild(el('em', '', '✦'));
+    strip.appendChild(s);
+  });
+
+  /* Menu */
+  var tabs = document.getElementById('menu-tabs');
+  var grid = document.getElementById('menu-grid');
+  var menu = window.MENU || [];
 
   function show(id) {
     Array.prototype.forEach.call(tabs.children, function (b) {
@@ -36,19 +40,23 @@
     var cat = menu.filter(function (c) { return c.id === id; })[0];
     if (!cat) return;
     cat.items.forEach(function (it) {
-      var card = el('article', 'dish' + (it.img ? '' : ' dish-noimg'));
+      var card = el('article', 'af-dish');
       if (it.img) {
         var img = el('img');
         img.src = it.img; img.alt = it.name; img.loading = 'lazy'; img.width = 560; img.height = 420;
         card.appendChild(img);
+      } else {
+        var ph = el('div', 'af-noimg', '✦');
+        ph.setAttribute('aria-hidden', 'true');
+        card.appendChild(ph);
       }
-      var body = el('div', 'dish-body');
-      var head = el('div', 'dish-head');
-      head.appendChild(el('h3', '', it.name));
-      head.appendChild(el('span', 'price', it.price ? '$' + it.price.toFixed(2) : ''));
-      body.appendChild(head);
-      if (it.fa) { var fa = el('span', 'fa', it.fa); fa.lang = 'fa'; fa.dir = 'rtl'; body.appendChild(fa); }
-      if (it.desc) body.appendChild(el('p', '', it.desc));
+      var body = el('div', 'af-dish-body');
+      var top = el('div', 'af-dish-top');
+      top.appendChild(el('h3', '', it.name));
+      top.appendChild(el('span', '', it.price ? '$' + it.price.toFixed(2) : ''));
+      body.appendChild(top);
+      if (it.fa) { var fa = el('p', 'af-fa', it.fa); fa.lang = 'fa'; fa.dir = 'rtl'; body.appendChild(fa); }
+      if (it.desc) body.appendChild(el('p', 'af-desc', it.desc));
       card.appendChild(body);
       grid.appendChild(card);
     });
@@ -70,7 +78,7 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var data = new FormData(form);
-    status.className = 'form-status';
+    status.className = 'af-status';
     if (data.get('_honey')) return;
     if (!data.get('name').trim() || !/^\S+@\S+\.\S+$/.test(data.get('email')) || !data.get('message').trim()) {
       status.textContent = 'Please enter your name, a valid email and a message.';

@@ -4,13 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Afraa Restaurant | Authentic Persian Cuisine in Vaughan</title>
-  <meta name="description" content="Afraa Restaurant in Vaughan, ON: authentic Persian kebabs, lamb shank and traditional Iranian dishes. Rated 4.8 by 1,977 guests. Dine-in, takeout and delivery.">
-  <meta property="og:title" content="Afraa Restaurant | Authentic Persian Cuisine">
-  <meta property="og:description" content="Freshly prepared Iranian dishes, perfectly grilled kebabs and generous portions in Vaughan, Ontario.">
+  <meta name="description" content="Perfectly grilled kebabs, slow-cooked stews and warm Persian hospitality at 180 Steeles Ave W, Vaughan. Dine in, takeout or delivery. Rated 4.8 by 1,977 guests.">
+  <meta property="og:title" content="Afraa Restaurant | Authentic Persian Cuisine in Vaughan">
+  <meta property="og:description" content="Perfectly grilled kebabs, slow-cooked stews and warm Persian hospitality in Vaughan, Ontario.">
   <meta property="og:type" content="restaurant">
+  <meta property="og:image" content="images/cover.webp">
+  <link rel="icon" href="images/logo.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
   {
@@ -18,203 +20,124 @@
     "@type": "Restaurant",
     "name": "Afraa Restaurant",
     "servesCuisine": "Persian",
-    "priceRange": "$20–40",
-    "image": "https://afraarestaurant.ca/wp-content/uploads/2026/04/Afraa_OG-Image_500x500-1-copy.webp",
-    "openingHoursSpecification": [
-      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"12:00","closes":"21:00"},
-      {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday","Sunday"],"opens":"12:00","closes":"22:00"}
-    ],
+    "priceRange": "$20-40",
     "telephone": "+1-905-764-0000",
     "url": "https://afraarestaurant.ca",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "180 Steeles Ave W Unit 19",
-      "addressLocality": "Vaughan",
-      "addressRegion": "ON",
-      "postalCode": "L4J 2L1",
-      "addressCountry": "CA"
-    },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "1977" }
+    "address": {"@type": "PostalAddress", "streetAddress": "180 Steeles Ave W Unit 19", "addressLocality": "Vaughan", "addressRegion": "ON", "postalCode": "L4J 2L1", "addressCountry": "CA"},
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "12:00", "closes": "21:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday", "Sunday"], "opens": "12:00", "closes": "22:00"}
+    ],
+    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "1977"}
   }
   </script>
 </head>
 <body>
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="Afraa Restaurant home">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" width="34" height="34"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M20 6l3.5 10.5L34 20l-10.5 3.5L20 34l-3.5-10.5L6 20l10.5-3.5z" fill="currentColor"/></svg>
-      </span>
-      <span class="brand-name">Afraa</span>
-    </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
-      <span></span><span></span><span></span>
-    </button>
-    <nav id="nav" class="nav">
-      <a href="#about">Our Story</a>
+  <header class="af-nav">
+    <a class="af-wordmark" href="#top">Afraa<span>Persian Restaurant</span></a>
+    <button class="af-burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><i></i><i></i><i></i></button>
+    <nav id="nav">
+      <a href="#story">Our story</a>
       <a href="#menu">Menu</a>
       <a href="#reviews">Reviews</a>
-      <a href="#contact">Contact</a>
       <a href="#visit">Visit</a>
-      <a class="btn btn-small" href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">Order Online</a>
+      <a class="af-cta-pill" href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">Order online</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <p class="eyebrow">Persian restaurant · Vaughan, Ontario</p>
-        <h1>A true Iranian<br>dining experience</h1>
-        <p class="lead">Freshly prepared dishes, premium ingredients and perfectly grilled Persian kebabs, served with warm hospitality and generous portions.</p>
-        <div class="hero-cta">
-          <a class="btn" href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">Order Online</a>
-          <a class="btn btn-ghost" href="tel:+19057640000">Call (905) 764-0000</a>
+    <section class="af-hero" id="top">
+      <div class="af-hero-copy">
+        <p class="af-kicker">Vaughan, Ontario</p>
+        <h1>Experience the essence of Persia in every bite</h1>
+        <p class="af-lede">Freshly prepared dishes, premium ingredients and kebabs grilled over fire, served with generous portions and warm hospitality.</p>
+        <div class="af-actions">
+          <a class="af-btn-solid" href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">Order online</a>
+          <a class="af-btn-line" href="tel:+19057640000">Call (905) 764-0000</a>
         </div>
-        <ul class="hero-facts">
-          <li><strong>4.8 ★</strong><span>1,977 reviews</span></li>
-          <li><strong>$20–40</strong><span>per person</span></li>
-          <li><strong>12–10</strong><span>open Fri–Sun</span></li>
+        <ul class="af-facts">
+          <li><b>4.8</b><span>1,977 Google reviews</span></li>
+          <li><b>$20 to 40</b><span>per person</span></li>
+          <li><b>Dine-in</b><span>takeout, delivery</span></li>
         </ul>
       </div>
-      <img class="hero-photo" src="images/home-3.webp" alt="Grilled Persian kebabs with saffron tomato and lemon" width="1025" height="897">
-    </section>
-
-    <section class="strip" aria-label="Ways to enjoy Afraa">
-      <span>Dine-in</span><i aria-hidden="true">✦</i><span>Takeout</span><i aria-hidden="true">✦</i><span>No-contact delivery</span><i aria-hidden="true">✦</i><span>Order on the app</span>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container two-col">
-        <div>
-          <p class="eyebrow">Our story</p>
-          <h2>Authentic Persian food, made with care</h2>
-        </div>
-        <div class="prose">
-          <img class="about-photo" src="images/home-1.webp" alt="Mixed kebab platter at Afraa" loading="lazy" width="1025" height="897">
-          <p>At Afraa Restaurant we bring you the flavours of Iran: juicy koobideh, tender lamb shank, slow-cooked traditional stews and rice with a golden tahdig, all prepared fresh with premium ingredients.</p>
-          <p>Inspired by age-old recipes and prepared with the finest ingredients, each dish tells a story of Persian heritage. Known for generous portions, a warm atmosphere and exceptional hospitality, Afraa is a favourite destination for Persian cuisine. Whether you're dining in, picking up or ordering delivery, every visit is a memorable meal.</p>
-        </div>
+      <div class="af-arch">
+        <img src="images/hero.webp" alt="Grilled chicken and koobideh kebabs with a roasted tomato and lemon" width="1025" height="897" fetchpriority="high">
       </div>
     </section>
 
-    <section class="section section-alt" id="menu">
-      <div class="container">
-        <p class="eyebrow">Menu</p>
-        <h2>Our menu</h2>
-        <p class="section-sub">Grilled kebabs, slow-cooked stews and traditional Persian favourites. Ready to order? <a href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">Order online</a>.</p>
+    <div class="af-strip" aria-hidden="true"><div id="strip"></div></div>
 
-        <div class="menu-tabs" role="tablist" aria-label="Menu categories" id="menu-tabs"></div>
-        <div class="menu-grid" id="menu-grid" role="tabpanel" aria-live="polite">
-          <noscript><p>Please enable JavaScript to browse the menu, or <a href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus">view it on our ordering page</a>.</p></noscript>
-        </div>
-        <p class="menu-note">Prices in CAD, before tax. Half-salad &amp; half-rice options, breakfast, Kaleh Pacheh and more are on our <a href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">online ordering page</a>.</p>
-
-        <div class="extras">
-          <h3>Included &amp; on the side</h3>
-          <ul>
-            <li>Fresh bread</li>
-            <li>Free tea &amp; cookies</li>
-            <li>Sweet bar</li>
-            <li>Coffee &amp; tea service station</li>
-          </ul>
-        </div>
+    <section class="af-section af-story" id="story">
+      <div class="af-story-photos">
+        <img class="a" src="images/plate.webp" alt="Mixed kebab platter with grilled vegetables" loading="lazy" width="1025" height="897">
+        <img class="b" src="images/lamb.webp" alt="Slow-cooked lamb with saffron rice" loading="lazy" width="1025" height="897">
+      </div>
+      <div class="af-story-copy">
+        <p class="af-kicker">Our story</p>
+        <h2>Authentic Persian cooking, made with care</h2>
+        <p>Welcome to Afraa Persian Restaurant, your destination for authentic Persian cuisine in the heart of Vaughan. From perfectly grilled kebabs to savory stews and fresh appetizers, every dish is inspired by age-old recipes and prepared with the finest ingredients.</p>
+        <p>Whether you are dining in, picking up or ordering delivery, Afraa promises a memorable meal with every visit.</p>
+        <a class="af-link" href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">Browse the full menu and order &rarr;</a>
       </div>
     </section>
 
-    <section class="section" id="reviews">
-      <div class="container">
-        <p class="eyebrow">Reviews</p>
-        <h2>Loved by 1,977 guests</h2>
-        <div class="rating-row" aria-label="Rated 4.8 out of 5">
-          <span class="big-rating">4.8</span>
-          <span class="stars" aria-hidden="true">★★★★★</span>
-          <span class="muted">on Google</span>
-        </div>
-        <div class="review-grid">
-          <figure class="review">
-            <blockquote>The quality of food, service, and atmosphere were amazing.</blockquote>
-            <figcaption>Guest review summary</figcaption>
-          </figure>
-          <figure class="review">
-            <blockquote>Absolutely amazing food! We dined in once and took out a couple of days later for my brother's birthday. Both times, good quality and delicious. The staff was incredibly accommodating and friendly.</blockquote>
-            <figcaption>Lady Needle Bridal Alterations · Local Guide</figcaption>
-          </figure>
-          <figure class="review">
-            <blockquote>The atmosphere was warm, relaxing, and the background music made it even more enjoyable. Our server, Sanmira, was incredibly friendly, attentive, and welcoming.</blockquote>
-            <figcaption>Truc Pham</figcaption>
-          </figure>
-          <figure class="review">
-            <blockquote>They serve soup, bread and cheese as appetizers, and a drink is included as well.</blockquote>
-            <figcaption>Guest review summary</figcaption>
-          </figure>
-        </div>
-        <p class="center"><a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Afraa+Restaurant+180+Steeles+Ave+W+Unit+19+Vaughan" target="_blank" rel="noopener">Read all reviews on Google</a></p>
+    <section class="af-section af-menu" id="menu">
+      <div class="af-head">
+        <p class="af-kicker">The menu</p>
+        <h2>From the grill and the pot</h2>
+        <p>Prices in CAD, before tax. Half salad and half rice options, breakfast, Kaleh Pacheh and more are on our <a href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">ordering page</a>.</p>
+      </div>
+      <div class="af-tabs" id="menu-tabs" role="tablist" aria-label="Menu categories"></div>
+      <div class="af-grid" id="menu-grid" role="tabpanel">
+        <noscript><p>Please enable JavaScript to browse the menu, or <a href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus">view it on our ordering page</a>.</p></noscript>
       </div>
     </section>
 
-    <section class="section" id="contact">
-      <div class="container two-col">
-        <div>
-          <p class="eyebrow">Contact us</p>
-          <h2>Questions, feedback or an inquiry?</h2>
-          <p class="prose">Fill out the form and our team will get back to you promptly. For reservations or large groups, calling <a href="tel:+19057640000">(905) 764-0000</a> is quickest.</p>
-        </div>
-        <form class="contact-form" id="contact-form" data-endpoint="" novalidate>
-          <label>Name<input name="name" type="text" autocomplete="name" required></label>
-          <label>Email<input name="email" type="email" autocomplete="email" required></label>
-          <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
-          <label>Message<textarea name="message" rows="5" required></textarea></label>
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
-          <button class="btn" type="submit">Send message</button>
-          <p class="form-status" id="form-status" role="status"></p>
-        </form>
+    <div class="af-banner" role="img" aria-label="Warm lantern-lit Persian interior illustration"></div>
+
+    <section class="af-section af-reviews" id="reviews">
+      <div class="af-score"><b>4.8</b><div><span aria-label="Rated 4.8 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</span><p>1,977 reviews on Google</p></div></div>
+      <div class="af-rev-grid">
+        <figure><blockquote>&ldquo;The quality of food, service, and atmosphere were amazing.&rdquo;</blockquote><figcaption>Google review summary</figcaption></figure>
+        <figure><blockquote>&ldquo;Absolutely amazing food! We dined in once and took out a couple of days later for my brother's birthday. Both times, good quality and delicious. The staff was incredibly accommodating and friendly.&rdquo;</blockquote><figcaption>Local Guide</figcaption></figure>
+        <figure><blockquote>&ldquo;The atmosphere was warm, relaxing, and the background music made it even more enjoyable. Our server, Sanmira, was incredibly friendly, attentive, and welcoming.&rdquo;</blockquote><figcaption>Truc Pham</figcaption></figure>
       </div>
     </section>
 
-    <section class="section section-dark" id="visit">
-      <div class="container two-col">
-        <div>
-          <p class="eyebrow">Visit us</p>
-          <h2>Come hungry</h2>
-          <address>
-            <strong>Afraa Restaurant</strong><br>
-            180 Steeles Ave W, Unit 19<br>
-            Steeles Square, Floor 1<br>
-            Vaughan, ON L4J 2L1
-          </address>
-          <dl class="info">
-            <dt>Phone</dt><dd><a href="tel:+19057640000">(905) 764-0000</a></dd>
-            <dt>Hours</dt><dd>Mon – Thu: 12:00 PM – 9:00 PM<br>Fri – Sun: 12:00 PM – 10:00 PM</dd>
-            <dt>Price</dt><dd>$20–40 per person</dd>
-            <dt>Service</dt><dd>Dine-in · Takeout · No-contact delivery</dd>
-          </dl>
-          <div class="hero-cta">
-            <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Afraa+Restaurant+180+Steeles+Ave+W+Unit+19+Vaughan+ON" target="_blank" rel="noopener">Get directions</a>
-            <a class="btn btn-ghost-light" href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">Order online</a>
-          </div>
+    <section class="af-section af-visit" id="visit">
+      <div class="af-visit-info">
+        <p class="af-kicker">Visit us</p>
+        <h2>Come hungry</h2>
+        <address>180 Steeles Ave West, Unit 19<br>Steeles Square, Floor 1<br>Vaughan, ON L4J 2L1</address>
+        <dl>
+          <dt>Phone</dt><dd><a href="tel:+19057640000">(905) 764-0000</a></dd>
+          <dt>Hours</dt><dd>Mon to Thu: 12:00 PM to 9:00 PM<br>Fri to Sun: 12:00 PM to 10:00 PM</dd>
+          <dt>Service</dt><dd>Dine-in, takeout, no-contact delivery</dd>
+        </dl>
+        <div class="af-actions">
+          <a class="af-btn-solid" href="https://www.google.com/maps/dir/?api=1&destination=Afraa+Restaurant+180+Steeles+Ave+W+Unit+19+Vaughan+ON" target="_blank" rel="noopener">Get directions</a>
+          <a class="af-btn-line light" href="https://onlineordering.mealsy.ca/en/#/Afraa/online/menus" target="_blank" rel="noopener">Order online</a>
         </div>
-        <div class="map">
-          <iframe title="Map to Afraa Restaurant" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Afraa+Restaurant+180+Steeles+Ave+W+Unit+19+Vaughan+ON&output=embed"></iframe>
-        </div>
+        <div class="af-map"><iframe title="Map to Afraa Restaurant" loading="lazy" src="https://www.google.com/maps?q=Afraa+Restaurant+180+Steeles+Ave+W+Unit+19+Vaughan+ON&output=embed"></iframe></div>
       </div>
-    </section>
-
-    <section class="section app">
-      <div class="container center">
-        <p class="eyebrow">Order from your phone</p>
-        <h2>Download the Afraa app</h2>
-        <p class="section-sub" style="margin-inline:auto">Easy ordering for pickup and delivery.</p>
-        <div class="hero-cta" style="justify-content:center">
-          <a class="btn" href="https://apps.apple.com/ca/app/afraa/id6741532998" target="_blank" rel="noopener">App Store</a>
-          <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=ca.mealsy.onlineordering.android.afraa" target="_blank" rel="noopener">Google Play</a>
-        </div>
-      </div>
+      <form class="af-form" id="contact-form" data-endpoint="" novalidate>
+        <h3>Questions, feedback or an inquiry?</h3>
+        <p>Send us a message and our team will get back to you promptly.</p>
+        <label>Name<input name="name" autocomplete="name"></label>
+        <label>Email<input name="email" type="email" autocomplete="email"></label>
+        <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+        <label>Message<textarea name="message" rows="5"></textarea></label>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+        <button class="af-btn-solid" type="submit">Send message</button>
+        <p class="af-status" id="form-status" role="status"></p>
+      </form>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p><strong>Afraa Restaurant</strong> · 180 Steeles Ave W Unit 19, Vaughan, ON L4J 2L1 · <a href="tel:+19057640000">(905) 764-0000</a></p>
-    <p class="muted">© <span id="year">2026</span> Afraa Restaurant. All rights reserved.</p>
+  <footer class="af-footer">
+    <p>Afraa Persian Restaurant &middot; 180 Steeles Ave W, Unit 19, Vaughan, ON L4J 2L1 &middot; <a href="tel:+19057640000">(905) 764-0000</a></p>
+    <p>&copy; <span id="year">2026</span> Afraa Restaurant. All rights reserved.</p>
   </footer>
 
   <script src="menu-data.js"></script>
