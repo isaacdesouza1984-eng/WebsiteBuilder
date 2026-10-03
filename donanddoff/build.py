@@ -22,6 +22,23 @@ TERMS = '''<dl class="terms">
   <div><dt>Shipping</dt><dd data-bind="ship"></dd></div>
 </dl>'''
 
+SYSTEMS = [
+ ("Chevron panels","Suit","High-contrast panels read at a distance and show orientation.","Street","Easy to spot in low light and from across the road."),
+ ("Reinforced shoulders","Suit","Shoulders and arms take the load and the wear.","Street","Panels where bag straps and friction land."),
+ ("Zipped hand pockets","Suit","Tools stay within reach and stay closed.","Street","Phone, keys and card secured, hands free."),
+ ("Full-length zip","Suit","Long closures make donning and doffing a procedure.","Street","Open it fully or only to the chest."),
+ ("Collar and hood","Suit","Suits seal at the neck.","Street","A high collar and a hood that sits close."),
+ ("Cuffs and hem","Suit","Suits seal at wrist and waist.","Street","Ribbed cuffs and hem hold the fit.")]
+PINS = [(63,38),(29,21),(66,62),(50,70),(50,13),(32,87)]
+
+def anatomy(P):
+    pins = ''.join(f'<button type="button" class="pin" data-i="{i}" style="left:{x}%;top:{y}%" aria-label="{SYSTEMS[i][0]}">{i+1:02d}</button>' for i,(x,y) in enumerate(PINS))
+    rows = ''.join(f'''<li data-i="{i}" tabindex="0"><span class="n mono">{i+1:02d}</span><div><h3>{a}</h3><p><b class="mono">Suit</b> {b}</p><p><b class="mono">Earth</b> {d}</p></div></li>''' for i,(a,_,b,_,d) in enumerate(SYSTEMS))
+    return f'''<div class="anat">
+  <div class="anat-img"><img src="{P}pl-front.webp" alt="Front of the Pressure-Line jacket with numbered callouts">{pins}</div>
+  <ol class="anat-list">{rows}</ol>
+</div>'''
+
 def build(page, brand, pre, switch=None, flat=False):
     agency = brand == "agency"
     logo_head = pre + "images/" + ("logo-agency" if agency else "logo-black") + ".webp"
@@ -71,29 +88,44 @@ def build(page, brand, pre, switch=None, flat=False):
 '''
     P = pre + "images/"
     if page == "index":
-        body = f'''
-<section class="hero"><div class="wrap grid">
-  <div>
-    <p class="mono eyebrow">Flagship 001 · Pre-order open</p>
-    <h1><span>Suit up.</span><span>Reach orbit.</span><span>Repeat.</span></h1>
-    <p class="lead">Spacewear built around the two bookends of every mission: putting the suit on, and taking it off.</p>
-    <div class="cta"><a class="btn" href="product.html">Reserve · $99</a><a class="btn line" href="about.html">The name</a></div>
+        body = f"""
+<section class="hero2"><div class="wrap">
+  <p class="mono eyebrow">Flagship 001 · Pre-order open</p>
+  <h1>Reverse-engineered<br><em>from the suit.</em></h1>
+  <div class="hero-row">
+    <p class="lead">Spacewear built from the logic of the pressure suit, for everyday life on Earth.</p>
+    <div class="cta"><a class="btn" href="product.html">Reserve · $99</a><a class="btn line" href="#suit-logic">See the systems</a></div>
   </div>
-  <figure class="stage"><img src="{P}pl-front.webp" alt="Black zip hoodie with white chevron panels across the chest and stripes down the sleeves"><span class="tag mono">001</span><figcaption class="mono"><span>The Pressure-Line</span><span>$99</span></figcaption></figure>
-</div></section>
+</div>
+<figure class="bleed"><img src="{P}hero-salt.webp" alt="A person in the black and white Pressure-Line jacket walking across a white salt flat at dawn toward a rocket on its launch pad"><figcaption class="mono wrap"><span>Suit up. Reach orbit. Repeat.</span><span>Ad astra eleganter</span></figcaption></figure>
+</section>
 
 <div class="ticker" aria-hidden="true"><div class="track">
-  {''.join('<span>Don</span><i>/</i><span>Reach orbit</span><i>/</i><span>Doff</span><i>/</i><span>Repeat</span><i>/</i>' for _ in range(6))}
+  {''.join('<span>Articulation</span><i>/</i><span>Reinforcement</span><i>/</i><span>Storage</span><i>/</i><span>Visibility</span><i>/</i><span>Closure</span><i>/</i>' for _ in range(5))}
 </div></div>
 
-<section><div class="wrap">
-  <p class="mono mute">Why the name</p>
-  <h2 style="margin-top:12px;max-width:14em">Two words. Every mission starts and ends with them.</h2>
-  <div class="defs">
-    <div><p class="mono ipa">verb · /dɒn/</p><h3>Don</h3><p>To put on the suit. The first act of every mission.</p></div>
-    <div><p class="mono ipa">verb · /dɒf/</p><h3>Doff</h3><p>To take it off. The last.</p></div>
+<section id="suit-logic"><div class="wrap">
+  <div class="head-row"><div><p class="mono mute">Suit logic</p><h2 style="margin-top:12px;max-width:11em">A suit solves problems. We kept the solutions.</h2></div>
+  <p class="mute" style="max-width:24em">Six systems from pressure-suit design, carried into a jacket you wear to work. Select a point.</p></div>
+  {anatomy(P)}
+</div></section>
+
+<section class="split"><figure class="bleed tall"><img src="{P}hangar.webp" alt="A white pressure suit and the Pressure-Line jacket on matching stands in an aerospace hangar" style="object-position:50% 40%"></figure>
+<div class="wrap"><p class="pull2">From the hangar<br>to the street.<br><em>Same logic.</em></p></div></section>
+
+<section><div class="wrap day">
+  <figure class="stage2"><img src="{P}street.webp" alt="A person in the Pressure-Line jacket sliding a phone into the zip pocket on a bright city street" loading="lazy"></figure>
+  <div>
+    <p class="mono mute">Mission profile</p>
+    <h2 style="margin:12px 0 28px">An ordinary day, run like a mission.</h2>
+    <ol class="log">
+      <li><span class="mono">06:40</span><div><h3>Don</h3><p>Zip. Hood up.</p></div></li>
+      <li><span class="mono">07:15</span><div><h3>Transit</h3><p>Phone, keys and card stowed. Hands free.</p></div></li>
+      <li><span class="mono">12:30</span><div><h3>Hold</h3><p>Collar down. Zip to the chest.</p></div></li>
+      <li><span class="mono">18:00</span><div><h3>Return</h3><p>Same jacket. Different light.</p></div></li>
+      <li><span class="mono">22:10</span><div><h3>Doff</h3><p>Hang it up. Repeat.</p></div></li>
+    </ol>
   </div>
-  <p class="src mono">NASA technical vocabulary since Gemini. Safety-critical today.</p>
 </div></section>
 
 <section class="on-band"><div class="wrap campaign">
@@ -110,14 +142,20 @@ def build(page, brand, pre, switch=None, flat=False):
   <div class="head-row"><h2>In the field</h2><a class="btn line sm" data-bind="ig" data-keep href="https://instagram.com/donanddoffco" rel="noopener">Follow @donanddoffco</a></div>
   <div class="look">
     <figure class="a"><img src="{P}pl-model.webp" alt="Model in the black and white zip hoodie with black joggers" loading="lazy"><figcaption class="mono">Worn</figcaption></figure>
-    <figure class="b"><img src="{P}trio.webp" alt="Three spacesuit-inspired hoodies with visors against a moon surface" loading="lazy" style="object-position:50% 30%"><figcaption class="mono">Concept · Kit</figcaption></figure>
-    <figure class="c"><img src="{P}suit.webp" alt="Black and white pressure suit before a rocket and moon" loading="lazy"><figcaption class="mono">Concept · Suit</figcaption></figure>
-    <figure class="d"><img src="{P}hoodie-visor.jpg" alt="Hooded jacket with a visor and panelled seam lines" loading="lazy"><figcaption class="mono">Concept · Visor</figcaption></figure>
+    <figure class="b"><img src="{P}detail.webp" alt="Close-up of the white chevron panel, reinforced shoulder and zip" loading="lazy" style="object-position:50% 30%"><figcaption class="mono">Detail</figcaption></figure>
+    <figure class="c"><img src="{P}pl-back.webp" alt="Back of the jacket with a white chevron across the shoulders" loading="lazy"><figcaption class="mono">Aft</figcaption></figure>
+    <figure class="d"><img src="{P}trio.webp" alt="Concept: three visor hoodies" loading="lazy"><figcaption class="mono">Concept</figcaption></figure>
   </div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
-  <p class="mono mute">Procedure</p>
+  <p class="mono mute">Why the name</p>
+  <h2 style="margin-top:12px;max-width:14em">Two words. Every mission starts and ends with them.</h2>
+  <div class="defs">
+    <div><p class="mono ipa">verb · /dɒn/</p><h3>Don</h3><p>To put on the suit. The first act of every mission.</p></div>
+    <div><p class="mono ipa">verb · /dɒf/</p><h3>Doff</h3><p>To take it off. The last.</p></div>
+  </div>
+  <p class="src mono">NASA technical vocabulary since Gemini. Safety-critical today.</p>
   <div class="steps">
     <div><p class="mono">Mid-1960s</p><h3>Gemini</h3><p>The terms enter NASA's technical vocabulary.</p></div>
     <div><p class="mono">1960s–70s</p><h3>Apollo</h3><p>Drilled into procedure. Steps, checks, a crew to confirm.</p></div>
@@ -125,23 +163,23 @@ def build(page, brand, pre, switch=None, flat=False):
   </div>
   <p style="margin-top:36px"><a class="btn line" href="about.html">Read the full entry</a></p>
 </div></section>
-'''
+"""
     elif page == "product":
-        imgs = [("pl-front.webp","Front of the black zip hoodie with white chevron panels"),("pl-back.webp","Back with a white chevron across the shoulders"),("pl-model.webp","Worn with black joggers"),("trio.webp","Concept: three visor hoodies"),("hoodie-visor.jpg","Concept: hooded jacket with visor")]
+        imgs = [("pl-front.webp","Front of the black zip hoodie with white chevron panels"),("pl-back.webp","Back with a white chevron across the shoulders"),("pl-model.webp","Worn with black joggers"),("detail.webp","Close-up of chevron panel, shoulder and zip"),("street.webp","Worn on a city street")]
         th = ''.join(f'<button type="button" data-src="{P}{a}" data-alt="{b}" aria-pressed="{"true" if i==0 else "false"}" aria-label="View image {i+1}"><img src="{P}{a}" alt=""></button>' for i,(a,b) in enumerate(imgs))
         sizes = ''.join(f'<span><input type="radio" name="size" id="s-{s}" value="{s}"><label for="s-{s}">{s}</label></span>' for s in ["S","M","L","XL","2XL"])
-        body = f'''
+        body = f"""
 <section style="padding-top:clamp(28px,4vw,56px)"><div class="wrap pdp">
   <div class="gallery">
     <div class="main"><img id="main-img" src="{P}{imgs[0][0]}" alt="{imgs[0][1]}"></div>
     <div class="thumbs">{th}</div>
-    <p class="note">Product renders and concept imagery. Final print placement and colourway are confirmed with the printer before production.</p>
+    <p class="note">Product renders and campaign imagery. Final print placement and colourway are confirmed with the printer before production.</p>
   </div>
   <div>
     <p class="mono mute">Flagship 001 · Threshold pre-order</p>
     <h1 style="font-size:clamp(2.3rem,5.6vw,4rem);margin-top:12px">The Pressure-Line</h1>
     <p class="price">$99</p>
-    <p>White panels cross the chest and run down the sleeves, as seams do on a pressure suit. It remembers the suit without pretending to be one.</p>
+    <p>Pressure-suit logic for everyday life on Earth. White chevron panels, reinforced shoulders, zipped pockets and a full-length zip, in one jacket.</p>
     {gauge()}
     <form id="reserve" novalidate>
       <p class="mono">Size</p>
@@ -152,33 +190,39 @@ def build(page, brand, pre, switch=None, flat=False):
     <p class="mono" style="margin-top:34px">Campaign terms</p>
     {TERMS}
     <ul class="spec">
-      <li>White chevron panels across chest and back, stripes down the sleeves</li>
+      <li>Six suit systems: chevron panels, reinforced shoulders, zipped pockets, full-length zip, collar and hood, cuffs and hem</li>
       <li>Premium blank, printed (DTG / DTF)</li>
       <li>Produced in Toronto</li>
       <li>One production run. No restock promised.</li>
     </ul>
   </div>
 </div></section>
-'''
+<section style="padding-top:0"><div class="wrap">
+  <p class="mono mute">Suit logic</p>
+  <h2 style="margin:12px 0 0;max-width:12em">What the suit taught the jacket.</h2>
+  {anatomy(P)}
+</div></section>
+"""
     else:
-        body = f'''
+        body = f"""
 <section style="padding-bottom:clamp(32px,5vw,56px)"><div class="wrap">
   <p class="mono mute">Why the name</p>
   <h1 style="margin-top:14px">Don &amp;<br>Doff</h1>
   <p style="margin-top:28px;font-size:1.3rem;color:var(--mute)">Every mission has two bookends. Putting the suit on. Taking it off.</p>
 </div></section>
-<div class="wrap"><div class="hero-img"><img src="{P}suit.webp" alt="Black and white pressure suit before a rocket and moon" style="object-position:50% 35%"></div></div>
+<div class="wrap"><div class="hero-img"><img src="{P}hangar.webp" alt="A white pressure suit and the Pressure-Line jacket on matching stands in an aerospace hangar" style="object-position:50% 40%"></div></div>
 <section><div class="wrap">
   <div class="era"><p class="when">Mid-<br>1960s</p><div><p class="mono mute">Gemini</p><h3>Donning enters the vocabulary</h3><p>The term appears in NASA's technical language during the Gemini program. A suit is not worn. It is donned.</p></div></div>
   <div class="era"><p class="when">Apollo</p><div><p class="mono mute">Procedure</p><h3>Drilled into routine</h3><p>Apollo made it routine. Donning and doffing became steps with order, checks and a crew to confirm them.</p></div></div>
-  <div class="era" style="border-bottom:3px solid var(--ink)"><p class="when">Today</p><div><p class="mono mute">NASA standard</p><h3>Safety-critical</h3><p>Donning and doffing is still official NASA vocabulary. It is treated as a safety-critical task.</p></div></div>
+  <div class="era"><p class="when">Today</p><div><p class="mono mute">NASA standard</p><h3>Safety-critical</h3><p>Donning and doffing is still official NASA vocabulary. It is treated as a safety-critical task.</p></div></div>
+  <div class="era" style="border-bottom:3px solid var(--ink)"><p class="when">Here</p><div><p class="mono mute">Reverse-engineered</p><h3>Suit logic, on Earth</h3><p>A pressure suit solves movement, closure, storage and visibility. We kept the solutions and made them for the street.</p></div></div>
 </div></section>
 <section class="on-band"><div class="wrap">
   <p class="pull">We outfit the bookends.<br><em>Ad astra</em> eleganter.</p>
   <p class="mute" style="margin-top:24px">Don &amp; Doff Co. makes spacewear in that spirit: spare, ordered, built to be worn on departure and return.</p>
   <p style="margin-top:32px"><a class="btn" href="product.html">Reserve the flagship</a></p>
 </div></section>
-'''
+"""
     return head + header + body + footer
 
 def artifact_form(html):

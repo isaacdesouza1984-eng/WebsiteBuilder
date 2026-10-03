@@ -183,3 +183,58 @@ footer .fine{margin-top:44px;padding-top:20px;border-top:1px solid rgba(255,255,
 .era .when{color:var(--ink)!important}
 .hero .grid>*,.campaign>*,.pdp>*,.era>*,footer .grid>*{min-width:0}
 main{overflow-x:clip}
+
+/* ---- v3: hero, anatomy, split, day log ---- */
+.hero2{padding-top:clamp(28px,5vw,64px)}
+.hero2 h1{font-size:clamp(2rem,5.6vw,4.7rem);line-height:.96;margin:18px 0 0}
+.hero2 h1 em{font-style:normal;color:var(--spot)}
+.hero2 .eyebrow{display:flex;gap:14px;align-items:center}
+.hero2 .eyebrow::before{content:"";width:34px;height:3px;background:var(--spot)}
+.hero-row{display:flex;justify-content:space-between;align-items:end;gap:24px 48px;flex-wrap:wrap;margin:28px 0 clamp(28px,4vw,48px)}
+.hero-row .lead{font-size:1.25rem;color:var(--mute);max-width:26em}
+.hero-row .cta{display:flex;gap:12px;flex-wrap:wrap}
+.bleed{position:relative;margin:0;background:var(--paper);overflow:hidden}
+.bleed img{width:100%;height:auto;aspect-ratio:21/9;object-fit:cover;min-height:300px}
+.bleed figcaption{position:absolute;left:0;right:0;bottom:14px;display:flex;justify-content:space-between;gap:12px;color:var(--ink);left:50%;transform:translateX(-50%);width:100%}
+.anat{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);margin-top:44px;align-items:start}
+.anat-img{position:relative;background:var(--paper);aspect-ratio:1;position:sticky;top:130px}
+.anat-img img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply}
+.pin{position:absolute;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;border:2px solid var(--ink);background:var(--bg);color:var(--ink);
+  font:500 .68rem var(--mono);cursor:pointer;display:grid;place-items:center;transition:background .15s,color .15s,transform .15s}
+.pin::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid var(--spot);opacity:.6;animation:ping 2.6s ease-out infinite}
+.pin.on,.pin:hover{background:var(--spot);color:var(--bg);border-color:var(--spot);transform:translate(-50%,-50%) scale(1.12)}
+@keyframes ping{from{transform:scale(.8);opacity:.7}to{transform:scale(1.5);opacity:0}}
+@media (prefers-reduced-motion:reduce){.pin::after{animation:none}}
+.anat-list{list-style:none;border-top:3px solid var(--ink)}
+.anat-list li{display:grid;grid-template-columns:3.2em 1fr;gap:12px;padding:20px 12px 20px 0;border-bottom:1px solid var(--line);cursor:pointer;transition:background .15s,padding .15s}
+.anat-list li.on{background:var(--paper);padding-left:14px}
+.anat-list .n{color:var(--spot);padding-top:5px}
+.anat-list h3{margin-bottom:8px}
+.anat-list p{font-size:1rem;color:var(--mute)}
+.anat-list p b{display:inline-block;min-width:4.4em;color:var(--ink);font-weight:500}
+.anat-list li.on p{color:var(--ink)}
+.split{padding:0;position:relative}
+.split .bleed img{aspect-ratio:16/8;min-height:340px}
+.split .wrap{position:absolute;left:0;right:0;bottom:clamp(20px,4vw,48px);top:auto}
+.pull2{display:inline-block;background:var(--bg);padding:clamp(16px,2.4vw,28px) clamp(18px,3vw,36px);font-weight:800;font-stretch:125%;text-transform:uppercase;font-size:clamp(1.3rem,3.4vw,2.6rem);line-height:1.02}
+.pull2 em{font-style:normal;color:var(--spot)}
+.day{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,5vw,72px);align-items:center}
+.stage2{margin:0;background:var(--paper);aspect-ratio:4/5}
+.stage2 img{width:100%;height:100%;object-fit:cover}
+.log{list-style:none;border-top:3px solid var(--ink)}
+.log li{display:grid;grid-template-columns:5em 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.log .mono{color:var(--spot)}
+.log h3{font-size:1.25rem;margin-bottom:4px}
+.log p{color:var(--mute)}
+.day>*,.anat>*{min-width:0}
+@media (max-width:860px){
+  .anat,.day{grid-template-columns:1fr}
+  .anat-img{position:relative;top:0}
+  .split .wrap{position:static;padding-block:0}
+  .split .bleed img{aspect-ratio:4/3}
+  .pull2{margin-top:-1px;background:var(--bg);padding-inline:var(--gutter);display:block;padding-block:20px}
+  .bleed figcaption{position:static;transform:none;padding-block:12px}
+}
+.split .bleed img{aspect-ratio:16/9;object-position:50% 12%!important}
+.split .wrap{text-align:right}
+@media (max-width:860px){.split .wrap{text-align:left}}

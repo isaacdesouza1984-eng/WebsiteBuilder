@@ -1,12 +1,13 @@
 # Don & Doff Co.
 
-Static v1 site: `index.html`, `product.html` (threshold pre-order), `about.html`.
+Heritage (mono) pages are in this folder; the Agency colourway is in `agency/`.
+Both are generated: edit `build.py`, `styles.css`, `script.js`, then run `python3 build.py`.
 
-Edit the `CAMPAIGN` block at the top of `script.js` to set the threshold, units reserved,
-end date, ship estimate, Shopify checkout URL and Instagram handle.
+Campaign settings live in the `CAMPAIGN` block at the top of `script.js`
+(threshold, units reserved, end date, ship estimate, Shopify store URL, product handle / variant IDs, Instagram).
 
-Placeholders to confirm: Instagram handle, ship estimate,
-and imagery (current images are hoodie/suit concepts; swap in tee renders). The crest is cropped from the supplied
-raster; swap in vector Heritage/Agency files for favicon and print when they exist.
+Shopify store: https://16ituc-qb.myshopify.com (password-protected, redirects to donanddoff.com).
+To enable Reserve: create the product, then set `productHandle` (or per-size `variantIds` for cart links).
 
-The flagship images show a zip hoodie, while the brief describes a printed tee. Confirm the product.
+Imagery in `images/`: product renders (`pl-*`), AI campaign scenes (`hero-salt`, `hangar`, `street`, `detail`),
+and crest variants (`logo-*`, cut from the supplied monochrome crest).

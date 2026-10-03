@@ -4,7 +4,9 @@ const CAMPAIGN = {
   unitsReserved: 0,                      // update by hand (or from Shopify) as orders come in
   endsAt: "2026-10-24T23:59:00-04:00",   // fixed end date, Toronto time (EDT)
   estShip: "Estimated 5–6 weeks after the campaign closes",
-  checkoutUrl: "",                       // Shopify product / checkout link, e.g. https://shop.example.com/products/flagship-tee
+  shopUrl: "https://16ituc-qb.myshopify.com",  // Shopify store
+  productHandle: "",                     // set once the product exists: shopUrl + /products/<handle>
+  variantIds: {},                        // optional: { S: 123, M: 124, ... } enables one-click cart links
   instagram: "donanddoffco"
 };
 
@@ -56,7 +58,18 @@ if (form) form.addEventListener("submit", e => {
   const size = new FormData(form).get("size");
   const out = $(".status", form);
   if (!size) { out.textContent = "Select a size."; return; }
-  if (!CAMPAIGN.checkoutUrl) { out.textContent = "Checkout opens when the Shopify store is connected."; return; }
-  const u = new URL(CAMPAIGN.checkoutUrl); u.searchParams.set("size", size);
-  location.href = u.toString();
+  let url = "";
+  if (CAMPAIGN.variantIds[size]) url = CAMPAIGN.shopUrl + "/cart/" + CAMPAIGN.variantIds[size] + ":1";
+  else if (CAMPAIGN.productHandle) url = CAMPAIGN.shopUrl + "/products/" + CAMPAIGN.productHandle;
+  if (!url) { out.textContent = "Reservations open shortly. The store is connected; the product goes live next."; return; }
+  const a = document.createElement("a"); a.href = url; a.target = "_blank"; a.rel = "noopener"; document.body.appendChild(a); a.click(); a.remove();
+});
+
+/* suit-logic anatomy: link pins and rows */
+$$(".anat").forEach(root => {
+  const set = i => { $$("[data-i]", root).forEach(e => e.classList.toggle("on", e.dataset.i === String(i))); };
+  $$("[data-i]", root).forEach(e => {
+    ["mouseenter", "focus", "click"].forEach(ev => e.addEventListener(ev, () => set(e.dataset.i)));
+  });
+  set(0);
 });
