@@ -133,7 +133,7 @@ def build(page, brand, pre, switch=None, flat=False):
   <div class="head-row"><div><p class="mono mute">Modules · Sold separately</p><h2 style="margin-top:12px;max-width:12em">Clip on. Connect.</h2></div>
   <p class="mute" style="max-width:26em">Magnetic modules that clip onto the jacket. A comm badge for calls and audio. A beacon for low light.</p></div>
   <div class="mod-row">
-    <figure class="mod-shot"><img src="{P}module-worn.webp" alt="A finger tapping the inch-wide comm badge clipped to the chest of the Pressure-Line jacket" loading="lazy"></figure>
+    <figure class="mod-shot"><video src="{P}comm-tap.mp4" poster="{P}module-worn.webp" autoplay muted loop playsinline aria-label="A finger tapping the inch-wide comm badge clipped to the chest of the Pressure-Line jacket"></video></figure>
     <article class="mod"><figure><img src="{P}module-comm.webp" alt="Slim one-inch comm badge with titanium rim, engraved orbit rings and touch controls, beside its magnetic backplate" loading="lazy"></figure>
       <div class="mod-head"><div><p class="mono mute">Module 01</p><h3>Comm</h3></div><p class="mod-price">$99</p></div>
       <ul><li>About one inch across. Slim profile.</li><li>Touch controls: play/pause, volume, track skip</li><li>Answer and end calls</li><li>Built-in speaker and microphone</li><li>Bluetooth</li><li>Magnetic clip</li></ul></article>

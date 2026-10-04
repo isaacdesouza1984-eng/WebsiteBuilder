@@ -276,3 +276,6 @@ main{overflow-x:clip}
 .mod-head{display:flex;justify-content:space-between;align-items:end;gap:12px}
 .mod-price{font-weight:800;font-stretch:125%;font-size:1.6rem;margin-bottom:12px}
 @media (max-width:860px){.mod-row,.mod-row.flip{grid-template-columns:1fr}.mod-row.flip .mod-shot{order:0}}
+
+.mod-shot video{width:100%;height:auto;display:block}
+@media (prefers-reduced-motion:reduce){.mod-shot video{animation:none}}

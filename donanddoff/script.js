@@ -73,3 +73,6 @@ $$(".anat").forEach(root => {
   });
   set(0);
 });
+
+/* respect reduced motion for autoplay video */
+if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) $$("video[autoplay]").forEach(v => { v.removeAttribute("autoplay"); v.pause(); v.controls = true; });
