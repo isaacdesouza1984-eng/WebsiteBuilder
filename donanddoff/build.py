@@ -130,15 +130,18 @@ def build(page, brand, pre, switch=None, flat=False):
 </div></section>
 
 <section class="mods"><div class="wrap">
-  <div class="head-row"><div><p class="mono mute">Modules · In development</p><h2 style="margin-top:12px;max-width:12em">Clip on. Connect.</h2></div>
+  <div class="head-row"><div><p class="mono mute">Modules · Sold separately</p><h2 style="margin-top:12px;max-width:12em">Clip on. Connect.</h2></div>
   <p class="mute" style="max-width:26em">Magnetic modules that clip onto the jacket. A comm badge for calls and audio. A beacon for low light.</p></div>
-  <div class="mod-grid">
-    <figure class="mod-wide"><img src="{P}module-worn.webp" alt="A hand tapping a round comm badge clipped to the chest of the Pressure-Line jacket" loading="lazy"></figure>
-    <article class="mod"><figure><img src="{P}module-comm.webp" alt="Round comm badge with brushed titanium rim, engraved orbit rings and a magnetic backplate" loading="lazy"></figure>
-      <p class="mono mute">Module 01</p><h3>Comm</h3>
-      <ul><li>Tap to answer and end calls</li><li>Play, pause and skip audio</li><li>Built-in speaker and microphone</li><li>Bluetooth</li><li>Magnetic clip</li></ul></article>
+  <div class="mod-row">
+    <figure class="mod-shot"><img src="{P}module-worn.webp" alt="A finger tapping the inch-wide comm badge clipped to the chest of the Pressure-Line jacket" loading="lazy"></figure>
+    <article class="mod"><figure><img src="{P}module-comm.webp" alt="Slim one-inch comm badge with titanium rim, engraved orbit rings and touch controls, beside its magnetic backplate" loading="lazy"></figure>
+      <div class="mod-head"><div><p class="mono mute">Module 01</p><h3>Comm</h3></div><p class="mod-price">$99</p></div>
+      <ul><li>About one inch across. Slim profile.</li><li>Touch controls: play/pause, volume, track skip</li><li>Answer and end calls</li><li>Built-in speaker and microphone</li><li>Bluetooth</li><li>Magnetic clip</li></ul></article>
+  </div>
+  <div class="mod-row flip">
+    <figure class="mod-shot"><img src="{P}module-beacon-worn.webp" alt="The beacon glowing on the chest of the Pressure-Line jacket on a city street at dusk" loading="lazy"></figure>
     <article class="mod"><figure><img src="{P}module-beacon.webp" alt="Slim clip-on light module with a white LED edge and a magnetic backplate" loading="lazy"></figure>
-      <p class="mono mute">Module 02</p><h3>Beacon</h3>
+      <div class="mod-head"><div><p class="mono mute">Module 02</p><h3>Beacon</h3></div><p class="mod-price">$49</p></div>
       <ul><li>Clip-on light for low-light transit</li><li>One-button control</li><li>Magnetic clip</li></ul></article>
   </div>
 </div></section>
@@ -207,7 +210,7 @@ def build(page, brand, pre, switch=None, flat=False):
     <ul class="spec">
       <li>Six suit systems: chevron panels, reinforced shoulders, zipped pockets, full-length zip, collar and hood, cuffs and hem</li>
       <li>Individually numbered, with certificate of authenticity</li>
-      <li>Ready for Don &amp; Doff magnetic modules (comm and beacon, in development)</li>
+      <li>Pairs with Don &amp; Doff magnetic modules: Comm ($99) and Beacon ($49), sold separately</li>
       <li>Produced in Toronto</li>
       <li>One production run. No restock promised.</li>
     </ul>
