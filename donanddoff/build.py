@@ -20,6 +20,7 @@ TERMS = '''<dl class="terms">
   <div><dt>Payment</dt><dd>Charged at order.</dd></div>
   <div><dt>Refund</dt><dd>Full refund to everyone if the threshold is not met by the deadline.</dd></div>
   <div><dt>Shipping</dt><dd data-bind="ship"></dd></div>
+  <div><dt>Provenance</dt><dd>Each piece individually numbered. Certificate of authenticity included.</dd></div>
 </dl>'''
 
 SYSTEMS = [
@@ -80,7 +81,7 @@ def build(page, brand, pre, switch=None, flat=False):
     <p class="motto">Ad astra<br>eleganter</p>
     <div class="links"><a href="product.html">Flagship pre-order</a><a href="about.html">The name</a><a data-bind="ig" href="https://instagram.com/donanddoffco" rel="noopener">@donanddoffco</a></div>
   </div>
-  <div class="fine mono"><span>&copy; Don &amp; Doff Co.</span><span>Pre-orders are refunded in full if the threshold is not met.</span>{sw}</div>
+  <div class="fine mono"><span>&copy; Don &amp; Doff Co.</span><span>Independent brand. Not affiliated with, sponsored by, or endorsed by NASA.</span>{sw}</div>
 </div></footer>
 <script src="{pre}script.js"></script>
 </body>
@@ -90,11 +91,11 @@ def build(page, brand, pre, switch=None, flat=False):
     if page == "index":
         body = f"""
 <section class="hero2"><div class="wrap">
-  <p class="mono eyebrow">Flagship 001 · Pre-order open</p>
+  <p class="mono eyebrow">Flagship 001 · Numbered run · Pre-order open</p>
   <h1>Reverse-engineered<br><em>from the suit.</em></h1>
   <div class="hero-row">
     <p class="lead">Spacewear built from the logic of the pressure suit, for everyday life on Earth.</p>
-    <div class="cta"><a class="btn" href="product.html">Reserve · $99</a><a class="btn line" href="#suit-logic">See the systems</a></div>
+    <div class="cta"><a class="btn" href="product.html">Reserve · $199</a><a class="btn line" href="#suit-logic">See the systems</a></div>
   </div>
 </div>
 <figure class="bleed"><img src="{P}hero-salt.webp" alt="A person in the black and white Pressure-Line jacket walking across a white salt flat at dawn toward a rocket on its launch pad"><figcaption class="mono wrap"><span>Suit up. Reach orbit. Repeat.</span><span>Ad astra eleganter</span></figcaption></figure>
@@ -120,11 +121,25 @@ def build(page, brand, pre, switch=None, flat=False):
     <h2 style="margin:12px 0 28px">An ordinary day, run like a mission.</h2>
     <ol class="log">
       <li><span class="mono">06:40</span><div><h3>Don</h3><p>Zip. Hood up.</p></div></li>
-      <li><span class="mono">07:15</span><div><h3>Transit</h3><p>Phone, keys and card stowed. Hands free.</p></div></li>
+      <li><span class="mono">07:15</span><div><h3>Transit</h3><p>Phone, keys and card stowed. Tap the comm to take a call.</p></div></li>
       <li><span class="mono">12:30</span><div><h3>Hold</h3><p>Collar down. Zip to the chest.</p></div></li>
-      <li><span class="mono">18:00</span><div><h3>Return</h3><p>Same jacket. Different light.</p></div></li>
+      <li><span class="mono">18:00</span><div><h3>Return</h3><p>Beacon on. Same jacket, different light.</p></div></li>
       <li><span class="mono">22:10</span><div><h3>Doff</h3><p>Hang it up. Repeat.</p></div></li>
     </ol>
+  </div>
+</div></section>
+
+<section class="mods"><div class="wrap">
+  <div class="head-row"><div><p class="mono mute">Modules · In development</p><h2 style="margin-top:12px;max-width:12em">Clip on. Connect.</h2></div>
+  <p class="mute" style="max-width:26em">Magnetic modules that clip onto the jacket. A comm badge for calls and audio. A beacon for low light.</p></div>
+  <div class="mod-grid">
+    <figure class="mod-wide"><img src="{P}module-worn.webp" alt="A hand tapping a round comm badge clipped to the chest of the Pressure-Line jacket" loading="lazy"></figure>
+    <article class="mod"><figure><img src="{P}module-comm.webp" alt="Round comm badge with brushed titanium rim, engraved orbit rings and a magnetic backplate" loading="lazy"></figure>
+      <p class="mono mute">Module 01</p><h3>Comm</h3>
+      <ul><li>Tap to answer and end calls</li><li>Play, pause and skip audio</li><li>Built-in speaker and microphone</li><li>Bluetooth</li><li>Magnetic clip</li></ul></article>
+    <article class="mod"><figure><img src="{P}module-beacon.webp" alt="Slim clip-on light module with a white LED edge and a magnetic backplate" loading="lazy"></figure>
+      <p class="mono mute">Module 02</p><h3>Beacon</h3>
+      <ul><li>Clip-on light for low-light transit</li><li>One-button control</li><li>Magnetic clip</li></ul></article>
   </div>
 </div></section>
 
@@ -132,8 +147,8 @@ def build(page, brand, pre, switch=None, flat=False):
   <div>
     <p class="mono">Flagship 001 · Threshold pre-order</p>
     <h2>The Pressure-Line</h2>
-    <p>Made only if 50 are ordered. Charged at order. Refunded in full to everyone if the threshold is not met by the deadline.</p>
-    <a class="btn" href="product.html">Reserve · $99</a>
+    <p>Made only if 50 are ordered. Each piece is numbered and ships with a certificate of authenticity. Charged at order. Refunded in full to everyone if the threshold is not met by the deadline.</p>
+    <a class="btn" href="product.html">Reserve · $199</a>
   </div>
   <div>{gauge()}{TERMS}</div>
 </div></section>
@@ -155,11 +170,11 @@ def build(page, brand, pre, switch=None, flat=False):
     <div><p class="mono ipa">verb · /dɒn/</p><h3>Don</h3><p>To put on the suit. The first act of every mission.</p></div>
     <div><p class="mono ipa">verb · /dɒf/</p><h3>Doff</h3><p>To take it off. The last.</p></div>
   </div>
-  <p class="src mono">NASA technical vocabulary since Gemini. Safety-critical today.</p>
+  <p class="src mono">NASA-STD-3001, requirement V2 11001: Suited Donning and Doffing.</p>
   <div class="steps">
-    <div><p class="mono">Mid-1960s</p><h3>Gemini</h3><p>The terms enter NASA's technical vocabulary.</p></div>
-    <div><p class="mono">1960s–70s</p><h3>Apollo</h3><p>Drilled into procedure. Steps, checks, a crew to confirm.</p></div>
-    <div><p class="mono">Now</p><h3>NASA standard</h3><p>Donning and doffing is still treated as a safety-critical task.</p></div>
+    <div><p class="mono">1966</p><h3>Gemini</h3><p>A NASA technical note describes a suit design approach followed to simplify donning and doffing.</p></div>
+    <div><p class="mono">2017</p><h3>Next-gen suits</h3><p>Life support budgeted for 8-hour EVAs, plus 2 hours of donning and doffing.</p></div>
+    <div><p class="mono">Now</p><h3>V2 11001</h3><p>NASA's human spaceflight standard requires efficient and effective donning and doffing.</p></div>
   </div>
   <p style="margin-top:36px"><a class="btn line" href="about.html">Read the full entry</a></p>
 </div></section>
@@ -178,20 +193,21 @@ def build(page, brand, pre, switch=None, flat=False):
   <div>
     <p class="mono mute">Flagship 001 · Threshold pre-order</p>
     <h1 style="font-size:clamp(2.3rem,5.6vw,4rem);margin-top:12px">The Pressure-Line</h1>
-    <p class="price">$99</p>
+    <p class="price">$199</p>
     <p>Pressure-suit logic for everyday life on Earth. White chevron panels, reinforced shoulders, zipped pockets and a full-length zip, in one jacket.</p>
     {gauge()}
     <form id="reserve" novalidate>
       <p class="mono">Size</p>
       <div class="sizes" role="radiogroup" aria-label="Size">{sizes}</div>
-      <button class="btn" type="submit" style="width:100%;justify-content:center">Reserve · $99</button>
+      <button class="btn" type="submit" style="width:100%;justify-content:center">Reserve · $199</button>
       <p class="status" role="status"></p>
     </form>
     <p class="mono" style="margin-top:34px">Campaign terms</p>
     {TERMS}
     <ul class="spec">
       <li>Six suit systems: chevron panels, reinforced shoulders, zipped pockets, full-length zip, collar and hood, cuffs and hem</li>
-      <li>Premium blank, printed (DTG / DTF)</li>
+      <li>Individually numbered, with certificate of authenticity</li>
+      <li>Ready for Don &amp; Doff magnetic modules (comm and beacon, in development)</li>
       <li>Produced in Toronto</li>
       <li>One production run. No restock promised.</li>
     </ul>
@@ -206,21 +222,37 @@ def build(page, brand, pre, switch=None, flat=False):
     else:
         body = f"""
 <section style="padding-bottom:clamp(32px,5vw,56px)"><div class="wrap">
-  <p class="mono mute">Why the name</p>
+  <p class="mono mute">About Don &amp; Doff Co.</p>
   <h1 style="margin-top:14px">Don &amp;<br>Doff</h1>
-  <p style="margin-top:28px;font-size:1.3rem;color:var(--mute)">Every mission has two bookends. Putting the suit on. Taking it off.</p>
+  <p style="margin-top:28px;font-size:1.3rem;color:var(--mute)">Don is the leaving. Doff is the coming back. We named a clothing brand after the whole cycle.</p>
 </div></section>
-<div class="wrap"><div class="hero-img"><img src="{P}hangar.webp" alt="A white pressure suit and the Pressure-Line jacket on matching stands in an aerospace hangar" style="object-position:50% 40%"></div></div>
+<div class="wrap"><figure class="hero-img"><img src="{P}hangar.webp" alt="A white pressure suit and the Pressure-Line jacket on matching stands in an aerospace hangar"></figure></div>
 <section><div class="wrap">
-  <div class="era"><p class="when">Mid-<br>1960s</p><div><p class="mono mute">Gemini</p><h3>Donning enters the vocabulary</h3><p>The term appears in NASA's technical language during the Gemini program. A suit is not worn. It is donned.</p></div></div>
-  <div class="era"><p class="when">Apollo</p><div><p class="mono mute">Procedure</p><h3>Drilled into routine</h3><p>Apollo made it routine. Donning and doffing became steps with order, checks and a crew to confirm them.</p></div></div>
-  <div class="era"><p class="when">Today</p><div><p class="mono mute">NASA standard</p><h3>Safety-critical</h3><p>Donning and doffing is still official NASA vocabulary. It is treated as a safety-critical task.</p></div></div>
-  <div class="era" style="border-bottom:3px solid var(--ink)"><p class="when">Here</p><div><p class="mono mute">Reverse-engineered</p><h3>Suit logic, on Earth</h3><p>A pressure suit solves movement, closure, storage and visibility. We kept the solutions and made them for the street.</p></div></div>
+  <div class="era"><p class="when">V2<br>11001</p><div><p class="mono mute">The name</p><h3>Suited Donning and Doffing</h3>
+    <p>Somewhere in NASA's human spaceflight standards there is a requirement numbered V2 11001. Its title is "Suited Donning and Doffing." It says spacesuits must allow for "efficient and effective donning and doffing," in normal operations and in emergencies.</p>
+    <p>Before a launch or a walk on another world, someone has to get dressed. Afterward, someone has to come home and take it all off. NASA's own description of EVA preparation runs from unstowing the suit through checkout, donning, doffing, and stowage. The suit is the first thing a crew puts on and the last thing it takes off.</p></div></div>
+  <div class="era"><p class="when">1966</p><div><p class="mono mute">Where it started · Gemini</p><h3>A problem about clothing</h3>
+    <p>A 1966 NASA Technical Note (TN D-3291) describes the suit built for the Gemini program. The capsule was too small for a crew member to fully put on or take off the conventional suit in flight. So the design priority became long-term comfort: a soft suit that served mostly as a flight suit, with a torso garment worn throughout the mission.</p>
+    <p>You stepped into it through a pressure-sealing zipper. The helmet had a quick doff-and-don capability. The document describes an approach followed to simplify donning and doffing and to improve the suit's operational use. One of the real engineering problems in spaceflight was how a person gets in and out of the thing that protects them.</p></div></div>
+  <div class="era"><p class="when">2017</p><div><p class="mono mute">The same problem, decades later</p><h3>Budgeted into life support</h3>
+    <p>A 2017 NASA Office of Inspector General report on spacesuit development describes a next-generation life support system sized for 100 EVAs, with 8 hours per EVA plus 2 hours of suit donning and doffing built into the budget. Even the life support hardware has to account for the time spent getting in and out.</p></div></div>
+  <div class="era" style="border-bottom:3px solid var(--ink)"><p class="when">Now</p><div><p class="mono mute">What we make</p><h3>The idea, not the engineering</h3>
+    <p>We make clothes for people who understand that how you suit up matters, and that every departure assumes a return. Our designs borrow the language of the suit: the seams, the layers, the ritual of putting something on with intent.</p>
+    <p>We borrow the idea, not the engineering. These are garments, not flight hardware.</p></div></div>
 </div></section>
 <section class="on-band"><div class="wrap">
-  <p class="pull">We outfit the bookends.<br><em>Ad astra</em> eleganter.</p>
-  <p class="mute" style="margin-top:24px">Don &amp; Doff Co. makes spacewear in that spirit: spare, ordered, built to be worn on departure and return.</p>
+  <p class="pull">Suit up. Reach orbit.<br><em>Repeat.</em></p>
+  <p class="mute" style="margin-top:24px">Ad astra eleganter.</p>
   <p style="margin-top:32px"><a class="btn" href="product.html">Reserve the flagship</a></p>
+</div></section>
+<section><div class="wrap sources">
+  <p class="mono mute">Sources</p>
+  <ul>
+    <li><a href="https://www.nasa.gov/wp-content/uploads/2025/09/ochmo-tb-050-spacesuits.pdf" rel="noopener">NASA-STD-3001 Technical Brief, Spacesuits (OCHMO-TB-050), derived from NASA-STD-3001 Volume 2, Rev E</a></li>
+    <li><a href="https://ntrs.nasa.gov/api/citations/19660007653/downloads/19660007653.pdf" rel="noopener">NASA Technical Note TN D-3291, Gemini space suit (1966)</a></li>
+    <li><a href="https://oig.nasa.gov/docs/IG-17-018.pdf" rel="noopener">NASA OIG Report IG-17-018, "NASA's Management and Development of Spacesuits" (April 2017)</a></li>
+  </ul>
+  <p class="mute disclaimer">Don &amp; Doff Co. is an independent brand and is not affiliated with, sponsored by, or endorsed by NASA. References to NASA documents are for historical and informational purposes only.</p>
 </div></section>
 """
     return head + header + body + footer

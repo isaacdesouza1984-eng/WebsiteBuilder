@@ -238,3 +238,29 @@ main{overflow-x:clip}
 .split .bleed img{aspect-ratio:16/9;object-position:50% 12%!important}
 .split .wrap{text-align:right}
 @media (max-width:860px){.split .wrap{text-align:left}}
+
+/* ---- v4: show whole images (no forced crops), modules, sources ---- */
+.bleed img,.split .bleed img{aspect-ratio:auto!important;height:auto;min-height:0;object-fit:initial}
+.hero-img{aspect-ratio:auto;margin:0}
+.hero-img img{height:auto}
+.stage2{aspect-ratio:auto}.stage2 img{height:auto}
+.gallery .main img,.thumbs img{object-fit:contain}
+.look{display:block;columns:3 260px;column-gap:12px}
+.look figure{break-inside:avoid;margin:0 0 12px;aspect-ratio:auto!important;grid-column:auto;grid-row:auto}
+.look img{height:auto}
+.mods .mod-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:12px;margin-top:40px;align-items:start}
+.mod-wide{margin:0;background:var(--paper)}
+.mod-wide img{width:100%;height:auto}
+.mod{border:3px solid var(--ink);padding:14px 18px 20px}
+.mod figure{margin:-14px -18px 16px;background:var(--paper)}
+.mod figure img{width:100%;height:auto;mix-blend-mode:multiply}
+.mod h3{font-size:1.8rem;margin:6px 0 12px}
+.mod ul{list-style:none;border-top:1px solid var(--line)}
+.mod li{padding:9px 0 9px 22px;border-bottom:1px solid var(--line);position:relative;font-size:.98rem}
+.mod li::before{content:"";position:absolute;left:0;top:1.05em;width:9px;height:9px;background:var(--spot)}
+.sources ul{list-style:none;margin-top:14px;border-top:3px solid var(--ink)}
+.sources li{padding:12px 0;border-bottom:1px solid var(--line)}
+.sources a{text-underline-offset:4px}
+.disclaimer{margin-top:24px;font-size:.92rem}
+.era p+p{margin-top:.8em}
+@media (max-width:860px){.mods .mod-grid{grid-template-columns:1fr}}
